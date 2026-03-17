@@ -1,0 +1,230 @@
+table SalesOrderHeader
+	lineageTag: 87515f48-a661-4191-8f4e-0aeeb4ba492d
+	sourceLineageTag: [SalesLT].[SalesOrderHeader]
+
+	column SalesOrderID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 583f1172-f3f8-41f4-8bad-79b8f55ba0ee
+		sourceLineageTag: SalesOrderID
+		summarizeBy: count
+		sourceColumn: SalesOrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevisionNumber
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 18a09521-dcf5-4645-9ce0-bdf58a41f568
+		sourceLineageTag: RevisionNumber
+		summarizeBy: sum
+		sourceColumn: RevisionNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ea3ccb1c-468e-46b6-b325-9b673cf9ce05
+		sourceLineageTag: OrderDate
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DueDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c4ef679e-15b5-479e-b316-eb9c499ec0cc
+		sourceLineageTag: DueDate
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5fa2a552-96a3-418d-a44d-a93fb5b6f7be
+		sourceLineageTag: ShipDate
+		summarizeBy: none
+		sourceColumn: ShipDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: e2932328-b4e0-42df-8b0b-3dab76f72d60
+		sourceLineageTag: Status
+		summarizeBy: sum
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column OnlineOrderFlag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 0fa27e02-0e7e-4a34-a4b2-ecedb5fc114f
+		sourceLineageTag: OnlineOrderFlag
+		summarizeBy: none
+		sourceColumn: OnlineOrderFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column PurchaseOrderNumber
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 5bacad8c-8527-4a40-a15b-7fe0ce9ed230
+		sourceLineageTag: PurchaseOrderNumber
+		summarizeBy: none
+		sourceColumn: PurchaseOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountNumber
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: f00e9b76-e974-4a1c-8baf-e01327528fe6
+		sourceLineageTag: AccountNumber
+		summarizeBy: none
+		sourceColumn: AccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7f56a0ca-daf0-4a61-a134-31be3d592dea
+		sourceLineageTag: CustomerID
+		summarizeBy: count
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipToAddressID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f48b1138-9561-4432-b196-121727a7765a
+		sourceLineageTag: ShipToAddressID
+		summarizeBy: count
+		sourceColumn: ShipToAddressID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillToAddressID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 12d6f73b-fd63-429c-8efd-668153076a23
+		sourceLineageTag: BillToAddressID
+		summarizeBy: count
+		sourceColumn: BillToAddressID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipMethod
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 2381bac4-f7d9-448a-a5dd-cdc61e995acc
+		sourceLineageTag: ShipMethod
+		summarizeBy: none
+		sourceColumn: ShipMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreditCardApprovalCode
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 26fe365b-46fc-4591-9183-c2b11843b800
+		sourceLineageTag: CreditCardApprovalCode
+		summarizeBy: none
+		sourceColumn: CreditCardApprovalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubTotal
+		dataType: double
+		sourceProviderType: decimal(19, 4)
+		lineageTag: 79fe72fc-500f-457d-ab58-1e4fef79b2a5
+		sourceLineageTag: SubTotal
+		summarizeBy: sum
+		sourceColumn: SubTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TaxAmt
+		dataType: double
+		sourceProviderType: decimal(19, 4)
+		lineageTag: 203747b1-f9e8-4444-8652-fc73d3b9a4e6
+		sourceLineageTag: TaxAmt
+		summarizeBy: sum
+		sourceColumn: TaxAmt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Freight
+		dataType: double
+		sourceProviderType: decimal(19, 4)
+		lineageTag: 5356aad2-d845-4e7d-b745-9e51fe4246b3
+		sourceLineageTag: Freight
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Comment
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: b5d58407-2f39-4fcf-8a82-ebfd8f3dff1b
+		sourceLineageTag: Comment
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 82feeddf-f6dd-426c-9b92-46c20c72adb1
+		sourceLineageTag: rowguid
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 3c152a0c-fb61-4938-ac9d-d1e468c3e57c
+		sourceLineageTag: ModifiedDate
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SalesOrderHeader = entity
+		mode: directLake
+		source
+			entityName: SalesOrderHeader
+			schemaName: SalesLT
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

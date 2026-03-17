@@ -1,0 +1,45 @@
+table MostSoldProduct
+	lineageTag: d4a4a920-2ab3-4c82-9bda-577b0e0b655d
+	sourceLineageTag: [SalesLT].[MostSoldProduct]
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ee393168-0dd8-400f-ad08-a61852310717
+		sourceLineageTag: ProductID
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 7bef4f72-4619-4c29-8136-34f76ac7ade6
+		sourceLineageTag: ProductName
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalQuantitySold
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 209c7758-0816-4b46-bf06-b3828ee2bcbc
+		sourceLineageTag: TotalQuantitySold
+		summarizeBy: sum
+		sourceColumn: TotalQuantitySold
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MostSoldProduct = entity
+		mode: directLake
+		source
+			entityName: MostSoldProduct
+			schemaName: SalesLT
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

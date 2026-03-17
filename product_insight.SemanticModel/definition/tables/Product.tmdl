@@ -1,0 +1,197 @@
+table Product
+	lineageTag: bb96e56e-4535-4035-bdd7-1289f8b0c72e
+	sourceLineageTag: [SalesLT].[Product]
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 07768032-353a-47f5-ada6-36c54dbf38f8
+		sourceLineageTag: ProductID
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 776ee472-44fb-4916-9c50-e2d3b296c83c
+		sourceLineageTag: Name
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductNumber
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: f0088417-e19b-4b4e-a34c-5967015b4151
+		sourceLineageTag: ProductNumber
+		summarizeBy: none
+		sourceColumn: ProductNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: aaaa70f1-60db-4faa-b1b5-a56f41c8d108
+		sourceLineageTag: Color
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column StandardCost
+		dataType: double
+		sourceProviderType: decimal(19, 4)
+		lineageTag: bd6a3433-c76f-4d85-9e29-8231ad2668d4
+		sourceLineageTag: StandardCost
+		summarizeBy: sum
+		sourceColumn: StandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ListPrice
+		dataType: double
+		sourceProviderType: decimal(19, 4)
+		lineageTag: 7b21b385-5969-44e2-ad48-55bd2aa1685f
+		sourceLineageTag: ListPrice
+		summarizeBy: sum
+		sourceColumn: ListPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Size
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 04aff617-5d77-4463-a8fa-6e31ed4f0cb6
+		sourceLineageTag: Size
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: decimal(8, 2)
+		lineageTag: da834f10-24f9-48b6-833e-d6923765ec36
+		sourceLineageTag: Weight
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ProductCategoryID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4b0f116b-999c-41e9-967e-820b34846aba
+		sourceLineageTag: ProductCategoryID
+		summarizeBy: count
+		sourceColumn: ProductCategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductModelID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: eabdbf91-dcac-4eee-b168-d10b441efdfc
+		sourceLineageTag: ProductModelID
+		summarizeBy: count
+		sourceColumn: ProductModelID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SellStartDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6914e975-cda4-4f9f-82e1-24991dbd67fa
+		sourceLineageTag: SellStartDate
+		summarizeBy: none
+		sourceColumn: SellStartDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column SellEndDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7c1f0a11-e5df-4b35-bd9f-3e84c849eee4
+		sourceLineageTag: SellEndDate
+		summarizeBy: none
+		sourceColumn: SellEndDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscontinuedDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d7a9d5f6-5f72-47a8-9642-e419392bd2e2
+		sourceLineageTag: DiscontinuedDate
+		summarizeBy: none
+		sourceColumn: DiscontinuedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ThumbnailPhotoFileName
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 0a047f43-e577-4b06-8bbf-3bc6febcf9f4
+		sourceLineageTag: ThumbnailPhotoFileName
+		summarizeBy: none
+		sourceColumn: ThumbnailPhotoFileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 7d9e7916-545c-4daa-ada5-ed9efe0d1e12
+		sourceLineageTag: rowguid
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 337f1606-1c54-4d7b-9969-fac042aa86c1
+		sourceLineageTag: ModifiedDate
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column chunk
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: c5a4f726-0134-4f2c-9d96-bbf507735d61
+		sourceLineageTag: chunk
+		summarizeBy: none
+		sourceColumn: chunk
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Product = entity
+		mode: directLake
+		source
+			entityName: Product
+			schemaName: SalesLT
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

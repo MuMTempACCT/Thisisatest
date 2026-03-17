@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataAgent",
+    "displayName": "ASDnjgds"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a941eac7-2b88-b5c9-4d5d-99f9c791d7d4"
+  }
+}
